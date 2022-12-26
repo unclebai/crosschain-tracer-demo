@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+
 	"github.com/binance-chain/go-sdk/client/rpc"
 	"github.com/binance-chain/go-sdk/common/rlp"
 	"github.com/binance-chain/go-sdk/common/types"
@@ -61,6 +62,7 @@ func (e *Executor) GetTransferInPackages(height int64) error {
 				events := blockResults.Results.DeliverTx[idx].Events
 				var isExecutedClaim bool
 				for _, event := range events {
+					// Only the last OracleClaim transaction get such an event
 					if event.Type == TxEventTypeClaim {
 						isExecutedClaim = true
 						break
@@ -87,6 +89,8 @@ func parseInterestedClaimPayload(payload []byte) error {
 	}
 	for _, pack := range packages {
 		// The channel for transfer fund from BSC to BC
+		// Please refer to https://github.com/bnb-chain/go-sdk/blob/7f0fb6a81fb64565e6c8676c7b335d4ef6e9e177/types/msg/msg-oracle.go#L119
+		// to fetch more interested packages.
 		if pack.ChannelId != 3 {
 			continue
 		}
