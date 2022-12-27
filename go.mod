@@ -2,7 +2,7 @@ module crosschain-tracer-demo
 
 go 1.18
 
-require github.com/binance-chain/go-sdk v1.2.7
+require github.com/binance-chain/go-sdk v1.2.9
 
 require (
 	github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973 // indirect
