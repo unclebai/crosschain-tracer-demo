@@ -78,6 +78,16 @@ func (e *Executor) GetCrossChainPackages(height int64) ([]sdkMsg.CrossChainPacka
 					if err != nil {
 						return nil, err
 					}
+					// TODO: in most cases, the cross chain package will be handled successfully.
+					// In some other case, the cross chain app has to deal with exception, like refund token if the
+					// receiver is not allowed to receive cross chain transfer. Give the most concerned cross chain transfer in
+					// packages, there are two kind of tags:
+					// 1. transferInSuccess_{symbol}_{receive addr}: {amount}; means cross chain transfer in package is successfully handled;
+					// 2. transferInRefund_{symbol}_{receive addr}: {amount}; means cross chain transfer in package failed to be handled, have to refund the token to BSC.
+					// Reference code: https://github.com/bnb-chain/node/blob/4d97f955e9e7ac369d2cbb33181763239d6cdf42/plugins/bridge/cross_app.go#L477
+					//for _, tag := range blockResults.Results.DeliverTx[idx].Tags {
+					//	// Filter your interested tags
+					//}
 					crossPackages = append(crossPackages, cp...)
 				}
 			}
