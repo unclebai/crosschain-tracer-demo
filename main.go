@@ -29,12 +29,18 @@ type Executor struct {
 
 func main() {
 	e := NewExecutor()
-	crossPackages, err := e.GetCrossChainPackages(158104713)
-	if err != nil {
-		panic(err)
+	heights := []int64{275450953, 274963956, 279729947, 284381110}
+	// These are the packages channels that received by Beacon Chain.
+	// Did not find package on channel 5, 8, 9, 11
+	channels := []uint8{2, 3, 4, 16}
+	for idx, h := range heights {
+		crossPackages, err := e.GetCrossChainPackages(h)
+		if err != nil {
+			panic(err)
+		}
+		bz, _ := json.MarshalIndent(crossPackages, "\t", "\t")
+		fmt.Printf("get channel %d package %s\n", channels[idx], string(bz))
 	}
-	bz, _ := json.MarshalIndent(crossPackages, "\t", "\t")
-	fmt.Println(string(bz))
 }
 
 // The `content` of CrossChainPackage is now defined as interface.

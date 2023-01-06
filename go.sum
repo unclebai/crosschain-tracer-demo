@@ -26,8 +26,8 @@ github.com/bnb-chain/bnc-tendermint v0.32.3-binance.3.0.20221109023026-379ddbab1
 github.com/bnb-chain/bnc-tendermint v0.32.3-binance.3.0.20221109023026-379ddbab19d1/go.mod h1:EJSMv0Dh5v91CiHn+2pOnl1a3sdRVjpdekJ20AyYmlQ=
 github.com/bnb-chain/bnc-tendermint-iavl v0.12.0-binance.4 h1:w8pAAx1N0lmVf0Lxs1prYuDikXwirOb9T7y2yw8zOBw=
 github.com/bnb-chain/bnc-tendermint-iavl v0.12.0-binance.4/go.mod h1:Zmh8GRdNJB8DULIOBar3JCZp6tSpcvM1NGKfE9U2EzA=
-github.com/bnb-chain/go-sdk v1.2.10-0.20230106182911-3ed6cfd3f46c h1:KqQgzWO/uB3nkq5EJBvmsnCOPRMLd4AoJzn8fgn84hc=
-github.com/bnb-chain/go-sdk v1.2.10-0.20230106182911-3ed6cfd3f46c/go.mod h1:Xr+4tm6YDYCizWNWGGihHYt7hsM/1BO3jrrnUGvhaZQ=
+github.com/bnb-chain/go-sdk v1.3.0 h1:4ReXn9aEF6uyOy5wm5n9+9o6BGiytxj5ztEeF+qe10E=
+github.com/bnb-chain/go-sdk v1.3.0/go.mod h1:Xr+4tm6YDYCizWNWGGihHYt7hsM/1BO3jrrnUGvhaZQ=
 github.com/bnb-chain/ledger-cosmos-go v0.9.9-binance.3 h1:a+QLVLaP32v9gfRDKHH2AcRkzYLTWbC8UxYTJkXRSec=
 github.com/bnb-chain/ledger-cosmos-go v0.9.9-binance.3/go.mod h1:TULULYTvPuWBxFIZFy6KjJaxJzbHeUderYNB1YhD6N0=
 github.com/bnb-chain/node v0.10.6 h1:a31ehuh5At5AWAMpY9MtshbO7jnfDewvtqrn481FCPA=

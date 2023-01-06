@@ -2,7 +2,10 @@ module crosschain-tracer-demo
 
 go 1.18
 
-require github.com/bnb-chain/go-sdk v1.2.10-0.20230106182911-3ed6cfd3f46c
+require (
+	github.com/bnb-chain/go-sdk v1.3.0
+	github.com/cosmos/cosmos-sdk v0.25.0
+)
 
 require (
 	github.com/bartekn/go-bip39 v0.0.0-20171116152956-a05967ea095d // indirect
@@ -11,7 +14,6 @@ require (
 	github.com/bnb-chain/node v0.10.6 // indirect
 	github.com/btcsuite/btcd v0.20.1-beta // indirect
 	github.com/btcsuite/btcutil v0.0.0-20190425235716-9e5f4b9a998d // indirect
-	github.com/cosmos/cosmos-sdk v0.25.0 // indirect
 	github.com/cosmos/go-bip39 v0.0.0-20180819234021-555e2067c45d // indirect
 	github.com/cosmos/ledger-go v0.9.2 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
