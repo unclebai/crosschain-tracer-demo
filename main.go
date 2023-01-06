@@ -4,11 +4,12 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	types2 "github.com/cosmos/cosmos-sdk/x/oracle/types"
 
-	"github.com/binance-chain/go-sdk/client/rpc"
-	"github.com/binance-chain/go-sdk/common/types"
-	sdkMsg "github.com/binance-chain/go-sdk/types/msg"
-	"github.com/binance-chain/go-sdk/types/tx"
+	"github.com/bnb-chain/go-sdk/client/rpc"
+	"github.com/bnb-chain/go-sdk/common/types"
+	sdkMsg "github.com/bnb-chain/go-sdk/types/msg"
+	"github.com/bnb-chain/go-sdk/types/tx"
 )
 
 const (
@@ -28,7 +29,7 @@ type Executor struct {
 
 func main() {
 	e := NewExecutor()
-	crossPackages, err := e.GetCrossChainPackages(286545068)
+	crossPackages, err := e.GetCrossChainPackages(158104713)
 	if err != nil {
 		panic(err)
 	}
@@ -63,7 +64,7 @@ func (e *Executor) GetCrossChainPackages(height int64) ([]sdkMsg.CrossChainPacka
 		msgs := stdTx.GetMsgs()
 		for _, msg := range msgs {
 			switch msg := msg.(type) {
-			case sdkMsg.ClaimMsg:
+			case types2.ClaimMsg:
 				events := blockResults.Results.DeliverTx[idx].Events
 				var isExecutedClaim bool
 				for _, event := range events {
